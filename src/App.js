@@ -15,9 +15,11 @@ function App() {
         notificationIcon: "../logo512.png",
       }}
     >
-      <h1>Connecting to wonderpush</h1>
-      <SwitchButton />
-      <EventList />
+      <div className="App">
+        <h1>Connecting to wonderpush</h1>
+        <SwitchButton />
+        <EventList />
+      </div>
     </WonderPush>
   );
 }
