@@ -8,13 +8,14 @@ export class EventToTrack extends Component {
   }
 
   fireEvent(e) {
-    this.props.wonderPush.trackEvent("myEvent");
+    this.props.wonderPush.trackEvent(this.props.event);
   }
 
   render() {
+    const { event, dictionary } = this.props;
     return (
-      <div className={"event myEvent"} onClick={this.fireEvent}>
-        Click on this div will track event name myEvent
+      <div className={"event " + event} onClick={this.fireEvent}>
+        {dictionary[event]}
       </div>
     );
   }
