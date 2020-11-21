@@ -3,25 +3,15 @@ import { WonderPush } from "react-wonderpush";
 import SwitchButton from "./components/SwitchButton";
 import EventList from "./components/EventList";
 import OneSignal, { useOneSignalSetup } from "react-onesignal";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    async function test() {
-      try {
-        OneSignal.initialize("0d0a98a9-0841-4d73-8098-4ee7e65f8b9a", {
-          requiresUserPrivacyConsent: true,
-          autoResubscribe: false,
-          notifyButton: {
-            enable: true,
-          },
-        });
-      } catch (error) {
-        console.log("App -> error", error);
-      }
-    }
-    test();
-  }, []);
+  OneSignal.initialize("0d0a98a9-0841-4d73-8098-4ee7e65f8b9a", {
+    requiresUserPrivacyConsent: true,
+    autoResubscribe: false,
+    notifyButton: {
+      enable: true,
+    },
+  });
 
   useOneSignalSetup(() => {
     OneSignal.setEmail("teste@gmail.com");
