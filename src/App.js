@@ -2,21 +2,8 @@ import "./App.css";
 import { WonderPush } from "react-wonderpush";
 import SwitchButton from "./components/SwitchButton";
 import EventList from "./components/EventList";
-import OneSignal, { useOneSignalSetup } from "react-onesignal";
 
 function App() {
-  OneSignal.initialize("0d0a98a9-0841-4d73-8098-4ee7e65f8b9a", {
-    requiresUserPrivacyConsent: true,
-    autoResubscribe: false,
-    notifyButton: {
-      enable: true,
-    },
-  });
-
-  useOneSignalSetup(() => {
-    OneSignal.setEmail("teste@gmail.com");
-    OneSignal.setExternalUserId("121323");
-  });
   return (
     <WonderPush
       options={{
